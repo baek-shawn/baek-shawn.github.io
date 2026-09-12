@@ -16,10 +16,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # 선택 사항. repository > Settings > Secrets and variables > Actions > Variables 에 등록하면 빌드에 반영된다.
+      # 선택 사항. repository > Settings > Secrets and variables > Actions 의
+      # Variables 또는 Secrets 탭, 둘 중 어디에 등록해도 반영된다.
       # 비어 있으면 Analytics / AdSense script를 로드하지 않는다.
-      PUBLIC_GA_ID: ${{ vars.PUBLIC_GA_ID }}
-      PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT }}
+      PUBLIC_GA_ID: ${{ vars.PUBLIC_GA_ID || secrets.PUBLIC_GA_ID }}
+      PUBLIC_ADSENSE_CLIENT: ${{ vars.PUBLIC_ADSENSE_CLIENT || secrets.PUBLIC_ADSENSE_CLIENT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
