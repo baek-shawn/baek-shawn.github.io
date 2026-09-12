@@ -164,7 +164,7 @@ AI가 생성한 일반적인 정보만 나열하지 않고 다음을 우선한�
 
 # 5. 카테고리
 
-초기 카테고리는 다음 5개로 제한한다.
+카테고리는 다음 6개로 제한한다.
 
 ```text
 Development
@@ -172,7 +172,15 @@ AI
 Engineering
 Certification
 Projects
+Papers
 ```
+
+분류 기준은 "주제"가 아니라 "글의 성격"이다.
+
+- Development / AI / Engineering: 해당 주제의 지식 정리와 간단한 테스트/실습(빠르게 해보고 결과만 확인한 것)도 포함한다.
+- Projects: 여러 요소를 엮어서 규모 있게 만든 결과물(완성된 도구, 하드웨어+AI 파이프라인 전체, 구매/리뷰 등)이다.
+- Certification: 자격증 준비 과정이나 합격 후기 자체다. 그 자격증을 활용해 규모 있게 만든 프로젝트는 Projects로 분류한다.
+- Papers: 논문 리뷰와 정리다.
 
 카테고리는 너무 세분화하지 않는다.
 
@@ -318,6 +326,7 @@ AI
 Engineering
 Certification
 Projects
+Papers
 
 최근 글
 
@@ -361,6 +370,7 @@ Tags
 /categories/engineering
 /categories/certification
 /categories/projects
+/categories/papers
 ```
 
 ---
