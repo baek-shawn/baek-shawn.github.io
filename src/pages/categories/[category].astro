@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { CATEGORIES, CATEGORY_DESCRIPTIONS, type Category } from '../../consts';
+import { getPublishedPosts, categorySlug, type Post } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return CATEGORIES.map((category) => ({
+    params: { category: categorySlug(category) },
+    props: { category, posts: posts.filter((post) => post.data.category === category) },
+  }));
+}
+
+interface Props {
+  category: Category;
+  posts: Post[];
+}
+
+const { category, posts } = Astro.props;
+---
+
+<BaseLayout title={category} description={`${category} 카테고리의 글 목록. ${CATEGORY_DESCRIPTIONS[category]}`}>
+  <h1 class="text-3xl font-bold tracking-tight">{category}</h1>
+  <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+    {CATEGORY_DESCRIPTIONS[category]} · {posts.length}개의 글
+  </p>
+  <div class="mt-4">
+    {
+      posts.length > 0 ? (
+        posts.map((post) => <PostCard post={post} />)
+      ) : (
+        <p class="py-6 text-zinc-500 dark:text-zinc-400">아직 작성된 글이 없습니다.</p>
+      )
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+// 글 카드와 글 페이지에서 공통으로 사용하는 메타데이터 (날짜 / 카테고리 / 태그)
+import { categoryUrl, type Post } from '../lib/posts';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  post: Post;
+  showUpdated?: boolean;
+}
+
+const { post, showUpdated = false } = Astro.props;
+const { publishedAt, updatedAt, category, tags } = post.data;
+---
+
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm text-zinc-500 dark:text-zinc-400">
+  <FormattedDate date={publishedAt} />
+  {
+    showUpdated && updatedAt && (
+      <span>
+        (수정: <FormattedDate date={updatedAt} />)
+      </span>
+    )
+  }
+  <a
+    href={categoryUrl(category)}
+    class="font-medium text-zinc-700 hover:underline dark:text-zinc-300"
+  >
+    {category}
+  </a>
+  {
+    tags.length > 0 && (
+      <ul class="flex flex-wrap gap-1.5">
+        {tags.map((tag) => (
+          <li class="rounded bg-zinc-100 px-1.5 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+            {tag}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>

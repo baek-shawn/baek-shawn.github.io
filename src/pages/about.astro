@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, SITE_AUTHOR, CONTACT_EMAIL, GITHUB_URL } from '../consts';
+---
+
+<BaseLayout title="About" description={`${SITE_TITLE}의 운영 목적, 다루는 주제, 작성자 소개와 연락 방법입니다.`}>
+  <h1 class="text-3xl font-bold tracking-tight">About</h1>
+
+  <div class="prose prose-zinc dark:prose-invert mt-6 max-w-none">
+    <h2>블로그 운영 목적</h2>
+    <p>
+      {SITE_TITLE}는 현직 개발자가 실제로 개발하고, 공부하고, 실패하고, 해결한 과정을 기록하는 개인
+      개발 블로그입니다. 일반적인 설명보다 실제 에러 메시지, 실제 명령어, 실제 실험 결과, 그리고
+      최종 해결 방법을 우선해서 남깁니다.
+    </p>
+
+    <h2>다루는 내용</h2>
+    <ul>
+      <li>Software Development, Linux / Ubuntu, Docker</li>
+      <li>AI / Machine Learning, LLM / Local AI, Computer Vision, OCR</li>
+      <li>GPU / CUDA</li>
+      <li>CAD, Engineering, Wireless / SDR</li>
+      <li>Certification</li>
+      <li>Personal Projects</li>
+    </ul>
+
+    <h2>작성자</h2>
+    <p>
+      {SITE_AUTHOR}. 소프트웨어 개발과 AI, 그리고 공학 전반에 관심이 있는 개발자입니다. 업무와
+      개인 프로젝트에서 직접 부딪힌 문제를 중심으로 글을 씁니다.
+    </p>
+
+    <h2>Contact</h2>
+    <p>글에 대한 의견이나 문의는 아래 방법으로 연락 주세요.</p>
+    <ul>
+      {CONTACT_EMAIL && (
+        <li>
+          Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </li>
+      )}
+      {GITHUB_URL && (
+        <li>
+          GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">{GITHUB_URL}</a>
+        </li>
+      )}
+    </ul>
+  </div>
+</BaseLayout>

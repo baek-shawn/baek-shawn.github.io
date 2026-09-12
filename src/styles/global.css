@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* 시스템 설정에 따른 다크 모드 (토글 없음) */
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 코드 블록: Shiki(github-dark) 단일 테마. 모바일에서 가로 스크롤 허용 */
+.prose pre {
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.prose pre code {
+  font-size: inherit;
+}
+/* 인라인 코드의 백틱 제거 (typography 기본값) */
+.prose :where(code):not(:where([class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: none;
+}
+/* 표 가로 스크롤 */
+.prose table {
+  display: block;
+  overflow-x: auto;
+}

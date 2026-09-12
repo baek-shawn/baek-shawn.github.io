@@ -1,0 +1,37 @@
+---
+import { SITE_TITLE, SITE_AUTHOR, GITHUB_URL, CONTACT_EMAIL } from '../consts';
+import { withBase } from '../lib/url';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-12 border-t border-zinc-200 dark:border-zinc-800">
+  <div
+    class="mx-auto flex max-w-3xl flex-wrap justify-between gap-4 px-4 py-8 text-sm text-zinc-500 sm:px-6 dark:text-zinc-400"
+  >
+    <p>© {year} {SITE_AUTHOR} · {SITE_TITLE}</p>
+    <ul class="flex flex-wrap gap-4">
+      <li><a href={withBase('/about/')} class="hover:underline">About</a></li>
+      <li><a href={withBase('/privacy/')} class="hover:underline">Privacy</a></li>
+      <li><a href={withBase('/rss.xml')} class="hover:underline">RSS</a></li>
+      {
+        GITHUB_URL && (
+          <li>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="hover:underline">
+              GitHub
+            </a>
+          </li>
+        )
+      }
+      {
+        CONTACT_EMAIL && (
+          <li>
+            <a href={`mailto:${CONTACT_EMAIL}`} class="hover:underline">
+              Contact
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+</footer>

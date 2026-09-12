@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, CONTACT_EMAIL, GITHUB_URL } from '../consts';
+
+const effectiveDate = '2026-09-12';
+---
+
+<BaseLayout title="Privacy Policy" description={`${SITE_TITLE}의 개인정보 처리방침입니다.`}>
+  <h1 class="text-3xl font-bold tracking-tight">Privacy Policy</h1>
+  <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">시행일: {effectiveDate}</p>
+
+  <div class="prose prose-zinc dark:prose-invert mt-6 max-w-none">
+    <p>
+      {SITE_TITLE}(이하 "블로그")는 방문자의 개인정보를 중요하게 생각합니다. 이 문서는 블로그가
+      어떤 정보를 수집하고 어떻게 사용하는지 설명합니다.
+    </p>
+
+    <h2>1. 수집하는 정보</h2>
+    <p>
+      블로그는 회원가입, 로그인, 댓글 등 방문자가 직접 개인정보를 입력하는 기능을 제공하지 않습니다.
+      다만 아래의 외부 서비스가 방문 통계와 광고 제공을 위해 쿠키 및 비식별 정보를 자동으로 수집할 수
+      있습니다.
+    </p>
+
+    <h2>2. Google Analytics</h2>
+    <p>
+      블로그는 방문자 수, 유입 경로, 페이지 조회 등 사이트 이용 통계를 파악하기 위해 Google
+      Analytics를 사용할 수 있습니다. Google Analytics는 쿠키를 사용해 비식별 정보를 수집하며, 수집된
+      정보는 Google의 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>에
+      따라 처리됩니다. 브라우저 설정이나
+      <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics 차단 부가기능</a>을
+      통해 수집을 거부할 수 있습니다.
+    </p>
+
+    <h2>3. Google AdSense</h2>
+    <p>
+      블로그는 Google AdSense를 통해 광고를 게재할 수 있습니다. Google을 포함한 제3자 광고 제공업체는
+      쿠키를 사용해 방문자의 이전 방문 기록을 바탕으로 광고를 표시할 수 있습니다. 방문자는
+      <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google 광고 설정</a>에서
+      맞춤 광고를 거부할 수 있습니다.
+    </p>
+
+    <h2>4. 쿠키</h2>
+    <p>
+      위 서비스들은 쿠키를 사용합니다. 방문자는 브라우저 설정에서 쿠키 저장을 거부하거나 삭제할 수
+      있으며, 이 경우 일부 서비스 이용에 제한이 있을 수 있습니다.
+    </p>
+
+    <h2>5. 외부 링크</h2>
+    <p>
+      블로그의 글에는 외부 사이트로 연결되는 링크가 포함될 수 있습니다. 외부 사이트의 개인정보 처리에
+      대해서는 블로그가 책임지지 않으며, 해당 사이트의 정책을 확인하시기 바랍니다.
+    </p>
+
+    <h2>6. 제휴 링크</h2>
+    <p>
+      블로그의 일부 링크는 제휴(Affiliate) 링크일 수 있습니다. 해당 링크를 통해 구매가 이루어지면
+      블로그 운영자가 일정 수수료를 받을 수 있으며, 방문자에게 추가 비용은 발생하지 않습니다.
+    </p>
+
+    <h2>7. 정책 변경</h2>
+    <p>
+      이 개인정보 처리방침은 서비스 변경이나 법령 개정에 따라 수정될 수 있으며, 변경 시 이 페이지에
+      게시합니다.
+    </p>
+
+    <h2>8. 문의</h2>
+    <p>개인정보 관련 문의는 아래로 연락 주세요.</p>
+    <ul>
+      {CONTACT_EMAIL && (
+        <li>
+          Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </li>
+      )}
+      {GITHUB_URL && (
+        <li>
+          GitHub: <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">{GITHUB_URL}</a>
+        </li>
+      )}
+    </ul>
+  </div>
+</BaseLayout>

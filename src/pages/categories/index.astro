@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CATEGORIES, CATEGORY_DESCRIPTIONS } from '../../consts';
+import { getPublishedPosts, categoryUrl } from '../../lib/posts';
+
+const posts = await getPublishedPosts();
+const countByCategory = Object.fromEntries(
+  CATEGORIES.map((category) => [
+    category,
+    posts.filter((post) => post.data.category === category).length,
+  ]),
+);
+---
+
+<BaseLayout title="Categories" description="카테고리별 게시글 목록입니다.">
+  <h1 class="text-3xl font-bold tracking-tight">Categories</h1>
+  <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+    {
+      CATEGORIES.map((category) => (
+        <li>
+          <a
+            href={categoryUrl(category)}
+            class="block rounded-lg border border-zinc-200 p-4 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+          >
+            <span class="font-medium">{category}</span>
+            <span class="ml-2 text-sm text-zinc-500 dark:text-zinc-400">
+              {countByCategory[category]}개
+            </span>
+            <span class="mt-1 block text-sm text-zinc-500 dark:text-zinc-400">
+              {CATEGORY_DESCRIPTIONS[category]}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
