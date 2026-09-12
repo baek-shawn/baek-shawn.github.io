@@ -13,7 +13,7 @@ import tailwindcss from '@tailwindcss/vite';
 // 코드에서는 Astro.site / import.meta.env.BASE_URL 만 사용하므로
 // 이 두 값만 바꾸면 canonical, sitemap, RSS, 내부 링크가 모두 함께 바뀐다.
 export default defineConfig({
-  site: 'https://USERNAME.github.io',
+  site: 'https://baek-shawn.github.io',
   // base: '/blog',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],

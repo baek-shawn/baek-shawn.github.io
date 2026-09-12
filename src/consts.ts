@@ -6,8 +6,8 @@ export const SITE_AUTHOR = 'Shawn';
 export const SITE_LANG = 'ko';
 
 // 연락 방법 (About / Privacy 페이지에 표시). 비워두면 해당 항목을 표시하지 않는다.
-export const CONTACT_EMAIL = '';
-export const GITHUB_URL = '';
+export const CONTACT_EMAIL = 'shawnbback@gmail.com';
+export const GITHUB_URL = 'https://github.com/baek-shawn';
 
 // 초기 카테고리는 5개로 고정한다. 세부 기술은 tags로 관리한다.
 export const CATEGORIES = ['Development', 'AI', 'Engineering', 'Certification', 'Projects'] as const;
