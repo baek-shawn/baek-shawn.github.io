@@ -15,6 +15,5 @@ export const projects: Project[] = [
     description:
       'Astro와 Markdown으로 만든 이 블로그. 정적 사이트로 빌드해 GitHub Pages에 자동 배포한다.',
     tech: ['Astro', 'TypeScript', 'Tailwind CSS', 'GitHub Actions', 'GitHub Pages'],
-    relatedPosts: ['welcome-to-my-developer-blog'],
   },
 ];
