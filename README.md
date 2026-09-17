@@ -43,7 +43,9 @@ npm run check      # Astro / TypeScript 타입 체크
 
 ## 새 글 작성
 
-1. `src/content/blog/` 에 `<slug>.md` 또는 `<slug>.mdx` 파일을 만듭니다. 파일명이 그대로 URL이 됩니다. (`vllm-install.md` → `/blog/vllm-install/`)
+1. `src/content/blog/<카테고리>/` 폴더에 `.md` 또는 `.mdx` 파일을 만듭니다. 카테고리 폴더명은 `category` 값과 동일하게 맞춥니다 (`Development` / `AI` / `Engineering` / `Certification` / `Projects` / `Papers`).
+   - 파일명은 정렬/탐색 편의를 위해 자유롭게 지어도 됩니다 (`[1]docker-permission.md` 등). 폴더 경로와 파일명 모두 URL에는 반영되지 않습니다.
+   - 실제 URL은 frontmatter의 `slug` 값으로 결정됩니다. (`slug: docker-permission-fix` → `/blog/docker-permission-fix/`)
 2. Frontmatter를 작성합니다.
 
    ```yaml
@@ -52,7 +54,8 @@ npm run check      # Astro / TypeScript 타입 체크
    description: "docker.sock permission denied 오류를 실제로 해결한 과정을 정리합니다."
    publishedAt: 2026-09-11
    updatedAt: 2026-09-11        # 선택
-   category: Development        # Development | AI | Engineering | Certification | Projects
+   category: Development        # Development | AI | Engineering | Certification | Projects | Papers
+   slug: docker-permission-fix  # URL을 결정. 생략하면 파일명이 그대로 URL이 됨
    tags:
      - Ubuntu
      - Docker
@@ -142,7 +145,7 @@ AdSense 승인 후에는 `src/layouts/BlogPost.astro` 의 `<AdSenseSlot adSlot="
 ```text
 src/
 ├── components/     # BaseHead(SEO), Header, Footer, PostCard, PostMeta, Callout, AdSenseSlot
-├── content/blog/   # 블로그 글 (Markdown / MDX)
+├── content/blog/   # 블로그 글 (Markdown / MDX), <카테고리>/ 폴더로 구분
 ├── content.config.ts
 ├── consts.ts       # 사이트 이름, 작성자, 카테고리 등 전역 설정
 ├── data/           # Projects 페이지 정적 데이터
