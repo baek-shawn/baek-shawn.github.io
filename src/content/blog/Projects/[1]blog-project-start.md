@@ -7,7 +7,7 @@ category: Projects
 tags:
   - 블로그
   - 회고
-draft: flase
+draft: false
 ---
 
 ## 왜 블로그를 새로 만들었나
@@ -30,23 +30,23 @@ https://shawnbaek.tistory.com/
 
 처음에는 GPT와 애드센스부터 이야기했다. 그러다 우선 애드센스보다 개발 블로그를 다시 시작하는 게 먼저라는 생각이 들어서, 이번 프로젝트를 시작하게 됐다.
 
-<!-- ![애드센스 얘기를 나누다 개발 블로그부터 다시 시작하기로 정리한 대화](/images/[1]blog-project-start/image-1.webp) -->
+![애드센스 얘기를 나누다 개발 블로그부터 다시 시작하기로 정리한 대화](/images/[1]blog-project-start/image-1.webp)
 
 ## 어떻게 만들었나
 
-<!-- ![GPT가 추천해준 개발 블로그 스택 구성](/images/[1]blog-project-start/image-2.webp) -->
+![GPT가 추천해준 개발 블로그 스택 구성](/images/[1]blog-project-start/image-2.webp)
 
 처음에는 GPT 웹 버전으로 애드센스 블로그에 어떤 주제로 글을 쓰면 좋을지 이야기했다. 일상이나 리뷰 같은 글은 네이버 블로그에 남기고, 개발·엔지니어링·프로젝트 관련 글은 새로 만드는 블로그에 쓰기로 했다.
 
 그 과정에서 GPT가 추천해준 구성대로 블로그를 만들어보기로 했다. 예전에는 Jekyll과 GitHub Pages로 직접 블로그를 만드는 사람들이 멋있어 보이기만 했는데, 이번에는 바이브코딩의 도움을 받아 나도 직접 만들어보게 됐다.
 
-<!-- ![Astro를 추천받고 정적 사이트 생성 라이브러리를 찾아보는 과정](/images/[1]blog-project-start/image-3.webp) -->
+![Astro를 추천받고 정적 사이트 생성 라이브러리를 찾아보는 과정](/images/[1]blog-project-start/image-3.webp)
 
 추천받은 스택 중에는 Astro라는 TypeScript 기반 정적 웹페이지 생성 라이브러리가 있었다. 처음 들어본 이름이라 따로 찾아봤는데, Astro를 이용해 간단한 블로그를 만드는 사람들이 꽤 많았다. 일단 나도 그대로 사용해보기로 했다.
 
 처음부터 기능을 많이 넣으려고 하면 또 알아보다가 지쳐서 시작도 못 할 것 같았다. 그래서 검색 기능 같은 건 일단 빼고, 글을 쓰고 읽을 수 있는 정도의 MVP만 먼저 만들기로 했다. 필요한 기능은 블로그를 운영하면서 하나씩 추가할 생각이다.
 
-<!-- ![MVP md파일 캡쳐본](/images/[1]blog-project-start/image-4.webp) -->
+![MVP md파일 캡쳐본](/images/[1]blog-project-start/image-4.webp)
 
 검색에 잘 걸리도록 SEO 같은 요소도 신경 썼다. 모르는 개념은 GPT에게 물어보고, 실제 구현은 Claude Code에게 맡겼다. 이 과정에서 이 블로그가 어느 정도까지 필요한지, 어떤 기술을 사용할지 정리한 스펙 문서도 만들었다.
 
@@ -64,7 +64,7 @@ https://shawnbaek.tistory.com/
 
 하고 싶은 건 많은데, 계획만 세워두고 실제로 실행하지 않는 경우가 많았다. 이번에는 완벽하게 준비하려고 하기보다 일단 하나씩 글을 쓰면서 이어가 보려고 한다.
 
-<!-- ![카테고리별로 정리한 블로그 구성](/images/[1]blog-project-start/image-5.webp) -->
+![카테고리별로 정리한 블로그 구성](/images/[1]blog-project-start/image-5.webp)
 
 ## 마무리
 
